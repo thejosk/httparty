@@ -592,6 +592,7 @@ module HTTParty
     end
 
     def process_cookies(options) #:nodoc:
+      binding.pry
       return unless options[:cookies] || default_cookies.any?
       options[:headers] ||= headers.dup
       options[:headers]["cookie"] = cookies.merge(options.delete(:cookies) || {}).to_cookie_string
