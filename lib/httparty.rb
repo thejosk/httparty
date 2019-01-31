@@ -489,6 +489,7 @@ module HTTParty
     #   # ie: http://foo.com/resource.json?limit=10
     #   Foo.get('http://foo.com/resource.json', query: {limit: 10})
     def get(path, options = {}, &block)
+      binding.pry
       perform_request Net::HTTP::Get, path, options, &block
     end
 
