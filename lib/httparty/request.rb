@@ -400,6 +400,7 @@ module HTTParty
     end
 
     def capture_cookies(response)
+      binding.pry
       return unless response['Set-Cookie']
       cookies_hash = HTTParty::CookieHash.new
       cookies_hash.add_cookies(options[:headers].to_hash['Cookie']) if options[:headers] && options[:headers].to_hash['Cookie']
