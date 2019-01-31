@@ -225,6 +225,7 @@ module HTTParty
     end
 
     def cookies(h = {})
+      binding.pry
       raise ArgumentError, 'Cookies must be an object which responds to #to_hash' unless h.respond_to?(:to_hash)
       default_cookies.add_cookies(h)
     end
