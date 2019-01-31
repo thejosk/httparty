@@ -598,6 +598,8 @@ module HTTParty
       return unless options[:cookies] || default_cookies.any?
       options[:headers] ||= headers.dup
       options[:headers]["Cookie"] = cookies.merge(options.delete(:cookies) || {}).to_cookie_string
+      binding.pry
+      puts ''
     end
 
     def validate_format
